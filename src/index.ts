@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use('/auth', authRouter);
 app.use('/calc', calcRouter);
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/ellty')
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://shashankag20:Mymail%4020@shashank.riw6cr8.mongodb.net/Shashank?retryWrites=true&w=majority&appName=Shashank')
   .then(() => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => {

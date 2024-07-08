@@ -16,7 +16,7 @@ app.use(body_parser_1.default.json());
 app.use((0, cors_1.default)());
 app.use('/auth', auth_1.authRouter);
 app.use('/calc', calculation_1.calcRouter);
-mongoose_1.default.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/numtree', {}).then(() => {
+mongoose_1.default.connect(process.env.MONGO_URI || 'mongodb+srv://shashankag20:Mymail%4020@shashank.riw6cr8.mongodb.net/Shashank?retryWrites=true&w=majority&appName=Shashank', {}).then(() => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
