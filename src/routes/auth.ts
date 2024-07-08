@@ -21,7 +21,7 @@ authRouter.post('/register', async (req, res) => {
 
     const newUser = new User({ username, password: hashedPassword });
     await newUser.save();
-    const token = jwt.sign({ id: newUser._id }, JWT_SECRET, { expiresIn: '5m' });
+    const token = jwt.sign({ id: newUser._id }, JWT_SECRET, { expiresIn: '10h' });
 
     res.status(201).json({ token });
   } catch (err) {
@@ -43,7 +43,7 @@ authRouter.post('/login', async (req, res) => {
     return res.status(400).send('Invalid username or password');
   }
 
-  const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '5m' });
+  const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '10h' });
   res.status(200).json({ token });
 });
 
